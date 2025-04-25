@@ -3,6 +3,8 @@ site_description: PMF_toolkits A Python tool for PMF data processing
 site_author: Dinh Ngoc Thuy Vy
 site_url: https://dinhngocthuyvy.github.io/PMF_toolkits
 repo_url: https://github.com/dinhngocthuyvy/PMF_toolkits
+site_dir: _site
+
 copyright: <p> Copyright &copy; 2023-<script>document.write(new Date().getFullYear())</script> Dinh Ngoc Thuy Vy. All Rights Reserved</p>
 
 theme:
@@ -39,7 +41,6 @@ theme:
 
 plugins:
   - search
-  # - pub-obsidian
   - mkdoxy: # place after wikilink
       projects:
         apiPyPMF: # name of project must be alphanumeric + numbers (without spaces)
