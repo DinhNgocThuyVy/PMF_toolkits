@@ -1,0 +1,10 @@
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-obsidian-links
+mdx_breakless_lists
+overrides
+mkdocs-jupyter
+pymdown-extensions
+mkdocs-publisher
+mkdocstrings-python
+mkdoxy

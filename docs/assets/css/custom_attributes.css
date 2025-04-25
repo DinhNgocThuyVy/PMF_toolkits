@@ -1,0 +1,78 @@
+/* File dedicated to custom attributes */
+/* Get more info here : https://pypi.org/project/mkdocs-custom-tags-attributes/ */
+
+#full_mode_switch svg {
+  width: 24px;
+  height: 24px;
+}
+
+.is-fullmode-active svg {
+  fill: #007bff;  /* Changes the icon color when Full Mode is active */
+}
+
+.md-header__button {
+  transition: background-color 0.3s ease;
+}
+
+.md-header__button:hover {
+  background-color: rgba(0, 123, 255, 0.1);  /* Adds a hover effect */
+}
+
+.comments {
+  display: none;
+}
+
+#left {
+  display: inline-block;
+  width: 100%;
+  text-align: right;
+  font-weight: normal;
+}
+
+#u {
+  text-align: center;
+  display: block;
+}
+
+#tags {
+  background-color: rgba(142, 137, 137, 0.38);
+  border-radius: 5px;
+}
+
+.hash {
+  background-color: #f3eefd;
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: normal;
+}
+
+[data-md-color-scheme="slate"] .hash {
+  background-color: #292433;
+}
+
+.citation {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid black;
+    margin: 0 10%;
+    padding:10px;
+    border-radius: 5px;
+}
+
+.citation > * {
+    margin: 0 !important;
+}
+
+.link_citation {
+	display: inline-block;
+    width: 90%;
+    text-align: right;
+    font-weight: normal;
+}
+
+.not_found {
+    background-color: rgba(211, 211, 211, 0.521);
+    display: inline;
+    color: grey;
+    border-radius: 5px;
+    padding: 5px;
+}

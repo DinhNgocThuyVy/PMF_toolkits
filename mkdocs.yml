@@ -1,0 +1,159 @@
+site_name: PMF_toolkits Documentation
+site_description: PMF_toolkits A Python tool for PMF data processing
+site_author: Dinh Ngoc Thuy Vy
+site_url: https://dinhngocthuyvy.github.io/PMF_toolkits
+repo_url: https://github.com/dinhngocthuyvy/PMF_toolkits
+copyright: <p> Copyright &copy; 2023-<script>document.write(new Date().getFullYear())</script> Dinh Ngoc Thuy Vy. All Rights Reserved</p>
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - navigation.tracking
+    - toc.follow
+    - navigation.expand
+    - content.tooltips
+    - navigation.footer
+  font:
+    text: Google Sans
+    code: Regular
+
+plugins:
+  - search
+  # - pub-obsidian
+  - mkdoxy: # place after wikilink
+      projects:
+        apiPyPMF: # name of project must be alphanumeric + numbers (without spaces)
+          src-dirs: ./src/PMF_toolkits # path to source code (support multiple paths separated by space) => INPUT
+          full-doc: true # if you want to generate full documentation
+          doxy-cfg:
+            FILE_PATTERNS: "*.py*"
+            EXTRACT_ALL: True
+            RECURSIVE: True
+            OPTIMIZE_OUTPUT_JAVA: True
+            JAVADOC_AUTOBRIEF: True
+            EXTRACT_ALL: True
+      save-api: docs
+      debug: false
+      ignore-errors: true
+  - mkdocstrings:
+      handlers:
+        python:
+          import:
+            - src.PMF_toolkits  # Make sure it finds your package
+          options:
+            show_source: false
+            show_root_full_path: false
+            show_if_no_docstring: false
+            docstring_style: google  # Or numpy/sphinx=
+            ignore_errors: true
+  - mkdocs-jupyter:
+      include_source: false
+      execute: false
+      include_requirejs: true
+      ignore_h1_titles: true
+      allow_errors: true
+      custom_mathjax_url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"
+
+markdown_extensions:
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+  - footnotes
+  - nl2br
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - meta
+  - smarty
+  - tables
+  - mdx_breakless_lists
+  - def_list
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - User Guide: quickstart.md
+  - API PMF_toolkits:
+      - Links: apiPyPMF/links.md
+      - Classes: apiPyPMF/classes.md
+      - Namespaces: apiPyPMF/namespace_members.md
+      - Class_members: apiPyPMF/class_members.md
+      - Variables: apiPyPMF/class_member_variables.md
+      - Hierarchy: apiPyPMF/hierarchy.md
+      - Files: apiPyPMF/files.md
+  - Docstrings:
+    - API:
+      - PMF_toolkits.core: api/api.md
+    - Core:
+      - PMF_toolkits.core: api/core.md
+    - Readers:
+      - PMF_toolkits.readers: api/readers.md
+    - Analysis:
+      - PMF_toolkits.analysis: api/analysis.md
+    - Visualization:
+      - PMF_toolkits.visualization: api/visualization.md
+    - Utils:
+      - PMF_toolkits.utils: api/utils.md
+    - Preprocessing:
+      - PMF_toolkits.preprocessing: api/preprocessing.md
+  - Example:
+    - Single-MultiSite: examples/example.ipynb
+    - Validation: examples/validation_example.ipynb
+    - Preprocessing: examples/preprocessing_example.ipynb
+  - Changelog: changelog.md
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js
+  - assets/js/katex.js
+
+extra_css:
+  - assets/css/admonition.css
+  - assets/css/admonition.css
+  - assets/css/customization.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css

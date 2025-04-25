@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+src/PMF_toolkits/Input_preparation
+src/PMF_toolkits/multi_site
+src/PMF_toolkits/single_site
+docs/examples/Input_preparation
+docs/examples/multi_site
+docs/examples/single_site
+tests/data/Input_preparation
+tests/data/multi_site
+tests/data/single_site
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test / Coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Documentation
+docs/_build/
+
+# Misc
+.DS_Store

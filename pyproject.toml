@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PMF_toolkits"
+version = "0.2.1"  # Standardized version across package
+description = "EPA PMF5 output analysis tools in Python"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Dinh Ngoc Thuy Vy", email = "dinhvy2101@gmail.com"}
+]
+dependencies = [
+    "pandas>=1.3.0",
+    "numpy>=1.20.0",
+    "matplotlib>=3.4.0",
+    "seaborn>=0.11.0",
+    "scipy>=1.7.0",
+    "scikit-learn>=1.0.0",
+    "openpyxl>=3.0.0"  # For Excel file support
+]
+
+[project.urls]
+Homepage = "https://github.com/DinhNgocThuyVy/PMF_toolkits"
+Repository = "https://github.com/DinhNgocThuyVy/PMF_toolkits.git"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["PMF_toolkits"]
+
+# Include package data files
+[tool.setuptools.package-data]
+"PMF_toolkits.data" = ["*.csv", "*.xlsx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=PMF_toolkits"
