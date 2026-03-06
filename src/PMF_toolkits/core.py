@@ -469,6 +469,8 @@ class PMF:
         if zero_totals.any():
             print(f"Warning: Near-zero total mass in factors: {profiles[zero_totals]}")
         d = pd.DataFrame(index=species, columns=profiles)
+        # reset "Specie" index name
+        d.index.name = df.index.name
         for p in profiles:
             denominator = max(df.loc[self.totalVar, p], 1e-10)
             d[p] = df.loc[species, p] / denominator
