@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PMF_toolkits"
-version = "0.2.1"  # Standardized version across package
+version = "0.2.2"  # Standardized version across package
 description = "EPA PMF5 output analysis tools in Python"
 readme = "README.md"
 requires-python = ">=3.8"
